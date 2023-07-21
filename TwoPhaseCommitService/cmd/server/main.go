@@ -2,6 +2,7 @@ package main
 
 import (
 	tm "TwoPhaseCommitService/TwoPhaseCommitService/internal/tm"
+	"TwoPhaseCommitService/TwoPhaseCommitService/mocks"
 	pb "TwoPhaseCommitService/TwoPhaseCommitService/pkg/twophasecommit"
 	"log"
 	"net"
@@ -17,7 +18,13 @@ func main() {
 
 	s := grpc.NewServer()
 
-	tm := tm.NewTransactionManager()
+	// Create some mock services
+	serviceA := &mocks.MockParticipant{Name: "ServiceA"}
+	serviceB := &mocks.MockParticipant{Name: "ServiceB"}
+	serviceC := &mocks.MockParticipant{Name: "ServiceC"}
+
+	tm := tm.NewTransactionManager([]tm.Participant{serviceA, serviceB, serviceC})
+
 	pb.RegisterTwoPhaseCommitServer(s, tm)
 
 	log.Println("Serving gRPC on 0.0.0.0:50051")
