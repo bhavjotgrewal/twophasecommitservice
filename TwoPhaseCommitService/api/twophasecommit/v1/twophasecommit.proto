@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package twophasecommit;
+
+option go_package = "./pkg/twophasecommit";
+
+service TwoPhaseCommit {
+	rpc Prepare(PrepareRequest) returns (VoteResponse) {}
+	rpc Commit(CommitRequest) returns (AckResponse) {}
+}
+
+message PrepareRequest {
+	string transactionId = 1;
+	// Add other fields as needed
+}
+
+message VoteResponse {
+	enum Vote {
+		YES = 0;
+		NO = 1;
+	}
+	Vote vote = 1;
+}
+
+message CommitRequest {
+	string transactionId = 1;
+	// Add other fields as needed
+}
+
+message AckResponse {
+	bool success = 1;
+}
