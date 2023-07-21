@@ -37,5 +37,14 @@ This is a basic implementation of 2PC and does not include certain optimizations
 
 5. **Security**: As a future enhancement, security measures could be implemented to ensure the authenticity and integrity of transactions. This could include the use of digital signatures, secure communication channels, and access control mechanisms.
 
+## Timeline, Cost, and Impact
+1. **Timeline**: Developing a proof-of-concept for the two-phase commit protocol is expected to take 2-3 weeks, including codebase refactoring.
+
+2. **Cost**: Major costs include the development time, potential infrastructure upgrades, and potential downtime during integration and testing.
+
+3. **Impact**: Implementing this protocol can prevent data corruption, improving the robustness of our system at the expense of some added complexity.
+
+4. **Future Savings**: This proactive measure can prevent expensive troubleshooting and data integrity issues in the future, enhancing system reliability and customer satisfaction.
+
 ## Running the Tests
 You can run the unit tests with ```go test ./....``` Tests include checking the basic functionality of the two-phase commit protocol, as well as handling failure scenarios, such as a participant's inability to prepare or commit a transaction.
