@@ -1,9 +1,9 @@
 package tm
 
 import (
-	pb "TwoPhaseCommitService/TwoPhaseCommitService/pkg/twophasecommit"
 	"context"
 	"sync"
+	pb "twophasecommitservice/pkg/twophasecommit"
 )
 
 type Participant interface {

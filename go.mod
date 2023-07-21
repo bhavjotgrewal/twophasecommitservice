@@ -1,4 +1,4 @@
-module TwoPhaseCommitService
+module twophasecommitservice
 
 go 1.20
 

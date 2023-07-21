@@ -1,11 +1,11 @@
 package main
 
 import (
-	tm "TwoPhaseCommitService/TwoPhaseCommitService/internal/tm"
-	"TwoPhaseCommitService/TwoPhaseCommitService/mocks"
-	pb "TwoPhaseCommitService/TwoPhaseCommitService/pkg/twophasecommit"
 	"log"
 	"net"
+	tm "twophasecommitservice/internal/tm"
+	"twophasecommitservice/mocks"
+	pb "twophasecommitservice/pkg/twophasecommit"
 
 	"google.golang.org/grpc"
 )

@@ -1,10 +1,10 @@
 package tm
 
 import (
-	"TwoPhaseCommitService/TwoPhaseCommitService/mocks"
-	pb "TwoPhaseCommitService/TwoPhaseCommitService/pkg/twophasecommit"
 	"context"
 	"testing"
+	"twophasecommitservice/mocks"
+	pb "twophasecommitservice/pkg/twophasecommit"
 )
 
 func TestTransactionManager_Prepare(t *testing.T) {
